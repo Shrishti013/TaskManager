@@ -1,0 +1,40 @@
+<body>
+<div class="page-content">
+  <div class="form-box">
+  <h2>Create a New Task</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="taskName">Task Name</label>
+      <input type="text" class="form-control" id="taskName" name="taskName" [(ngModel)]="taskName" required>
+    </div>
+
+    <div class="form-group">
+      <label for="taskDescription">Task Description</label>
+      <textarea class="form-control" id="taskDescription" name="taskDescription" [(ngModel)]="taskDescription"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="taskDeadline">Deadline</label>
+      <input type="date" class="form-control" id="taskDeadline" name="taskDeadline" [(ngModel)]="taskDeadline" required>
+    </div>
+
+    <div class="form-group">
+      <label for="taskStatus">Status</label>
+      <select class="form-control" id="taskStatus" name="taskStatus" [(ngModel)]="taskStatus">
+        <option value="not-started">Not Started</option>
+        <option value="in-progress">In Progress</option>
+        <option value="completed">Completed</option>
+      </select>
+    </div>
+    <mat-date-range-input [rangePicker]="picker">
+      <input matStartDate placeholder="Start date">
+      <input matEndDate placeholder="End date">
+    </mat-date-range-input>
+    
+    <mat-date-range-picker #picker></mat-date-range-picker>
+
+    <button type="submit" class="btn btn-primary">Create Task</button>
+  </form>
+</div>
+</div>
+</body>

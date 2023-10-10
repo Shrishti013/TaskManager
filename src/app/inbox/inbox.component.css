@@ -1,0 +1,76 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.inbox {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.inbox-header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+.inbox-header h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+}
+
+.inbox-list {
+    padding: 20px;
+}
+
+.message {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.message-sender {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.message-content h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.message-content p {
+    color: #555;
+}
+
+.message-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.complete-button,
+.archive-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.complete-button:hover,
+.archive-button:hover {
+    background-color: #555;
+}
