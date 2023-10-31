@@ -1,232 +1,10 @@
-/* .product-container {
-  width: 100%;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #e6214c;
-}
-
-button {
-  position: absolute;
-  top: 30px; 
-  right: 30px; 
-  background-color: #c62649;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #ff0055;
-}
-
-.product-cards {
-  margin-top: 20px;
-}
-
-h2 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.task-card {
-  width: calc(50% - 10px); 
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px 0;
-  background-color: #fff;
-  box-sizing: border-box; 
-}
-
-.task-name, .task-description, .task-deadline, .task-status {
-  margin: 5px 0;
-}
-
-.task-name {
-  font-weight: bold;
-}
-
- */
-
- .product-container {
-  position: relative;
-  width: 100%; /* Ensure the container is 100% wide */
-  box-sizing: border-box; /* Include padding and border in width calculation */
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #e6214c;
-  margin: 1%;
-}
-
-.task-create-button {
-  background-color: #dd0031;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  transition: background-color 0.3s;
-  text-align: center;
-}
-.task-create-button:hover {
-  background-color: #ff0055;
-}
-
-.product-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-h2 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.task-card {
-  width: calc(50% - 10px);
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px 0;
-  background-color: #fff;
-  box-sizing: border-box;
-}
-
-.task-name, .task-description, .task-deadline, .task-status {
-  margin: 5px 0;
-}
-
-.task-name {
-  font-weight: bold;
-}
-/* .page-content {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  padding: 40px 20px 0 20px;
-
-  .header {
-    font-size: 26px;
-    color: var(--main-color);
-    margin-top: 30px;
-  }
-} */
-.page-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center horizontally */
-  justify-content: center; /* Center vertically */
-  text-align: center; /* Center text within */
-  height: 100%; /* Ensure it takes full height of its parent */
-  padding: 40px 20px 0 20px;
-  .header {
-    font-size: 26px;
-    color: var(--main-color);
-    margin-top: 30px;
-  }
-}
-
-.button-container {
-  display: flex;
-}
-
-/* Style for the tab container */
-.tabs {
-  display: flex;
-  border-bottom: 2px solid var(--main-color);
-}
-
-/* Style for each individual tab button */
-.tabs button {
-  border: none;
-  background: none;
-  cursor: pointer;
-  padding: 10px 20px;
-  font-size: 16px;
-  color: var(--main-text-color);
-  background-color: var(--bg-color);
-  border: 1px solid var(--main-color);
-  border-radius: 0;
-  transition: background-color 0.3s;
-}
-
-/* Style for the active tab button */
-.tabs button.active {
-  background-color: var(--bg-color); /* Change background color when active */
-  border-bottom: 2px solid var(--bg-color);
-  border-radius: 0;
-}
-
-.middle {
-  list-style-type: none;
-  padding: 0;
-  text-align: center;
-  background-color: #f7f7f7;
-  /* border: 1px solid #ccc;
-  border-radius: 5px; */
-  margin: 0;
-  padding: 10px;
-}
-
-.middle li {
-  font-size: 10px;
-  margin: 10px 0;
-  /* border: 1px solid #ccc;
-  border-radius: 5px; */
-  /* padding: 10px; */
-  background-color: #fff;
-  /* box-sizing: border-box; */
-  transition: background-color 0.3s;
-
-  &:hover {
-    background-color: #f0f0f0; /* Change background color on hover */
-  }
-}
-.important {
-  list-style-type: none;
-  padding: 0;
-  text-align: center;
-  /* border: 1px solid #ccc;
-  border-radius: 5px; */
-  margin: 10px;
-  display: block; /* By default, display the list */
-
-}
-
-.important:empty {
-  display: none; /* Hide the list when it's empty */
-}
-
-.important li {
-  font-size: 18px;
-  margin: 10px 0;
-  /* border: 1px solid #ccc;
-  border-radius: 5px; */
-  padding: 10px;
-  background-color: #fff;
-  /* box-sizing: border-box; */
-  transition: background-color 0.3s;
-
-  &:hover {
-    background-color: #f0f0f0; /* Change background color on hover */
-  }
-}
-
 @import 'node_modules/font-awesome/css/font-awesome.css';
 
 * {
   box-sizing: border-box;
   outline: none;
   font-family: 'DM Sans', sans-serif; /* Set the font for all elements */
+  font-weight: bold;
 }
 
 :root {
@@ -252,7 +30,33 @@ h2 {
   --task-color: #777982;
 }
 
+html {
+  background-color: blue;
+}
+
 body {
+  font-weight: bold;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  font-size: 12px;
+  /* background-color: #0056b3; */
+  background-image: url('src/assets/body.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  padding: 150px;
+}
+
+
+/* body {
+  font-weight: bold;
   margin: 0;
   display: flex;
   align-items: center;
@@ -263,44 +67,59 @@ body {
   overflow: hidden;
   font-size: 12px;
   background-image: url('src\assets\body.jpg');
-  background-repeat: no-repeat;
   background-size: cover;
-  /* background-image: linear-gradient(21deg, rgba(64, 83, 206, 0.3697003234675773) 68%, rgba(255, 206, 196, 0.5) 163%), linear-gradient(163deg, rgba(49, 146, 170, 0.07944489965716128) 86%, rgba(239, 112, 138, 0.5) 40%), linear-gradient(30deg, rgba(76, 79, 173, 0.6173675716587805) 22%, rgba(237, 106, 134, 0.5) 169%), linear-gradient(48deg, rgba(31, 85, 147, 0.7323890641868473) 64%, rgba(247, 126, 132, 0.5) 43%); */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
   background-blend-mode: overlay, multiply, color, normal;
-  padding: 400px;
-}
-/* .dum{
-  background-image: url('C:\Users\Relanto\ShrishtiSingh\angularapp\newTaskApp\newTaskApp\src\assets\back.jpg');
+  padding: 0;
 } */
+
 ul {
+  font-weight: bold;
   list-style-type: none;
   padding: 0;
 }
 
 button {
+  font-weight: bold;
   border: none;
   background: none;
   cursor: pointer;
 }
 
 html, body {
-  height: 100%;
+  font-weight: bold;
+  /* height: 100%; */
   margin: 0;
+  height: 100%;
 }
+
+/* .task-manager {
+  font-weight: bold;
+  width: 100%;
+  height: 100vh; 
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+ 
+} */
 
 .task-manager {
   font-weight: bold;
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 800vw;
   max-width: 100%;
   height: 100%;
   max-height: 100%;
-  /* background:white; Add background image with no-repeat */
-  background-size: cover; /* Adjust the background size as needed */
-  /* opacity: 0.8; Add opacity value */
-  border-radius: 4px;
-  box-shadow: 0 0.3px 2.2px rgba(0, 0, 0, 0.011), 0 0.7px 5.3px rgba(0, 0, 0, 0.016), 0 1.3px 10px rgba(0, 0, 0, 0.02), 0 2.2px 17.9px rgba(0, 0, 0, 0.024), 0 4.2px 33.4px rgba(0, 0, 0, 0.029), 0 10px 80px rgba(0, 0, 0, 0.04);
+  background-size: cover; 
+  /* border-radius: 4px;
+  box-shadow: 0 0.3px 2.2px rgba(0, 0, 0, 0.011), 0 0.7px 5.3px rgba(0, 0, 0, 0.016), 0 1.3px 10px rgba(0, 0, 0, 0.02), 0 2.2px 17.9px rgba(0, 0, 0, 0.024), 0 4.2px 33.4px rgba(0, 0, 0, 0.029), 0 10px 80px rgba(0, 0, 0, 0.04); */
   overflow: hidden;
 }
 
@@ -319,6 +138,7 @@ html, body {
 } */
 
 .left-bar {
+  font-weight: bold;
   background-color: var(--bg-color);
   width: 230px;
   border-right: 1px solid #e3e7f7;
@@ -326,6 +146,7 @@ html, body {
 }
 
 .left-content {
+  font-weight: bold;
   padding: 40px;
 }
 
@@ -343,6 +164,7 @@ html, body {
 } */
 
 .item {
+  font-weight: bold;
   display: flex;
   align-items: center;
   padding: 10px 20px;
@@ -351,10 +173,12 @@ html, body {
 }
 
 .item:hover {
+  font-weight: bold;
   background-color: #f0f0f0;
 }
 
 .item a {
+  font-weight: bold;
   text-decoration: none;
   color: #333;
   /* color: #000; */
@@ -362,26 +186,31 @@ html, body {
 }
 
 .category-list {
+  font-weight: bold;
   margin-top: 50px;
 }
 
 .category-list .item {
+  font-weight: bold;
   color: var(--secondary-color);
 }
 
 .action-list {
+  font-weight: bold;
   list-style: none;
   padding: 0;
 }
 
 
 .actions {
+  font-weight: bold;
   padding: 12px;
   display: flex;
   justify-content: space-between;
 }
 
 .circle {
+  font-weight: bold;
   border-radius: 50%;
   width: 10px;
   height: 10px;
@@ -390,6 +219,7 @@ html, body {
 }
 
 .circle-2 {
+  font-weight: bold;
   border-radius: 50%;
   width: 4px;
   height: 4px;
@@ -397,24 +227,13 @@ html, body {
   box-shadow: -6px 0 0 0 #d5d7e3, 6px 0 0 0 #d5d7e3;
 }
 
-.right-bar {
-  width: 320px;
-  border-left: 1px solid #e3e7f7;
-  display: flex;
-  flex-direction: column;
-
-  .header {
-    font-size: 20px;
-    color: var(--main-text-color);
-    margin-left: 30px;
-  }
-}
-
 .top-part {
+  font-weight: bold;
   padding: 30px;
   align-self: flex-end;
 
   svg {
+    font-weight: bold;
     width: 14px;
     height: 14px;
     color: var(--main-color);
@@ -422,6 +241,7 @@ html, body {
   }
 
   .count {
+    font-weight: bold;
     font-size: 12px;
     border-radius: 50%;
     width: 24px;
@@ -434,12 +254,14 @@ html, body {
 }
 
 .right-content {
+  font-weight: bold;
   padding: 10px 40px;
   overflow-y: auto;
   flex: 1;
 }
 
 .task-box {
+  font-weight: bold;
   position: relative;
   border-radius: 12px;
   width: 100%;
@@ -449,20 +271,23 @@ html, body {
   box-shadow: 2px 2px 4px 0px rgba(235, 235, 235, 1);
 
   &:hover {
+    font-weight: bold;
     transform: scale(1.02);
   }
 }
 
 .time {
+  font-weight: bold;
   margin-bottom: 6px;
-  opacity: 0.4;
+  /* opacity: 0.4; */
   font-size: 10px;
 }
 
 .task-name {
+  font-weight: bold;
   font-size: 14px;
   font-weight: 500;
-  opacity: 0.6;
+  /* opacity: 0.6; */
 }
 
 .yellow {
@@ -493,7 +318,7 @@ html, body {
   border-radius: 50%;
   background-color: #8e92a4;
   box-shadow: 0 -4px 0 0 #8e92a4, 0 4px 0 0 #8e92a4;
-  opacity: 0.4;
+  /* opacity: 0.4; */
   right: 20px;
   top: 30px;
   cursor: pointer;
@@ -525,6 +350,7 @@ html, body {
 }
 
 .members {
+  font-weight: bold;
   display: flex;
   margin-top: 14px;
 
@@ -546,12 +372,16 @@ html, body {
 }
 
 .page-content {
+  font-weight: bold;
   display: flex;
+  /* background-image: url('\src\assets\ss.png'); */
+  /* opacity: 0.1; */
   flex-direction: column;
   flex: 1;
   padding: 40px 20px 0 20px;
 
   .header {
+    font-weight: bold;
     font-size: 26px;
     color: var(--main-color);
     margin-top: 30px;
@@ -559,6 +389,7 @@ html, body {
 }
 
 .content-categories {
+  font-weight: bold;
   display: flex;
   justify-content: space-evenly;
   width: 100%;
@@ -567,10 +398,12 @@ html, body {
 }
 
 .nav-item {
+  font-weight: bold;
   display: none;
 }
 
 .category {
+  font-weight: bold;
   font-weight: 500;
   color: var(--secondary-color);
   border-bottom: 1px solid #ddd;
@@ -588,10 +421,12 @@ html, body {
 }
 
 .task-item {
+  font-weight: bold;
   display: none;
 }
 
 .tasks-wrapper {
+  font-weight: bold;
   padding: 30px 0;
   flex: 1;
   overflow-y: auto;
@@ -600,6 +435,7 @@ html, body {
 }
 
 .task {
+  font-weight: bold;
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -650,7 +486,7 @@ label .label-text {
   .task-item:checked + label .label-text:before {
     background-color: var(--checkbox-color);
     border: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-check'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+    /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-check'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E"); */
     background-repeat: no-repeat;
     background-size: 10px;
     background-position: center;
@@ -658,6 +494,7 @@ label .label-text {
   }
 
   .tag {
+    font-weight: bold;
     font-size: 10px;
     padding: 4px 8px;
     border-radius: 20px;
@@ -682,11 +519,9 @@ label .label-text {
       color: var(--tag-color-text-four);
     }
   }
-  /* body{
-    background-image: url('C:\Users\Relanto\ShrishtiSingh\angularapp\newTaskApp\newTaskApp\src\assets\back.jpg');
-  } */
 
   .upcoming {
+    font-weight: bold;
     border-bottom: 1px solid #ddd;
     padding-bottom: 30px;
     margin-bottom: 30px;
@@ -730,23 +565,33 @@ label .label-text {
   }
 
   .members {
+    font-weight: bold;
     width: 40px;
     height: 40px;
   }
 
   .task-create-button {
+    font-weight: bold;
     background-color: #dd0031;
     color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
+    font-weight: bold; /* Make the text bolder */
     font-weight: bold;
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
     transition: background-color 0.3s;
     text-align: center;
+    margin-bottom: 10px; /* Add margin to push it above */
   }
+  /* .content {
+    float: left;  
+    width: 70%;    
+    padding-left: 0; 
+  
+  } */
 
   .task-create-button:hover {
     background-color: #ff0055;
@@ -754,6 +599,7 @@ label .label-text {
 
   /* Style for the tab buttons */
   .button-container {
+    font-weight: bold;
     display: flex;
   }
 
@@ -768,6 +614,7 @@ label .label-text {
   }
 
   .button-container button.active {
+    font-weight: bold;
     background-color: #0056b3;
   }
 
@@ -779,6 +626,7 @@ label .label-text {
   }
 
   .task-form input {
+    font-weight: bold;
     padding: 5px;
     margin: 5px 0;
     border: 1px solid #ccc;
@@ -792,16 +640,19 @@ label .label-text {
   .middle {
     list-style-type: none;
     padding: 0;
-    text-align: center;
-    background-color: #f7f7f7;
+    text-align: left;
     /* border: 1px solid #ccc;
     border-radius: 5px; */
-    margin: 0;
-    padding: 10px;
+    margin: 10px;
+    display: block; /* By default, display the list */
   }
   
   .middle li {
+    text-align: left; /* Align content to the left */
+    padding-left: 10px;
+    font-weight: bold;
     font-size: 10px;
+    font-weight: bolder;
     margin: 10px 0;
     /* border: 1px solid #ccc;
     border-radius: 5px; */
@@ -817,7 +668,7 @@ label .label-text {
   .important {
     list-style-type: none;
     padding: 0;
-    text-align: center;
+    text-align: left;
     /* border: 1px solid #ccc;
     border-radius: 5px; */
     margin: 10px;
@@ -830,6 +681,7 @@ label .label-text {
   }
   
   .important li {
+    font-weight: bold;
     font-size: 18px;
     margin: 10px 0;
     /* border: 1px solid #ccc;
@@ -844,12 +696,7 @@ label .label-text {
     }
   }
 
-  * {
-    box-sizing: border-box;
-    outline: none;
-    font-family: 'DM Sans', sans-serif; /* Set the font for all elements */
-  }
-
+  
   
   .circle-1 {
     width: 50px;
@@ -935,5 +782,4 @@ label .label-text {
       width: 45px;
       height: 45px;
       transform: rotate(-40deg); }
-  
   

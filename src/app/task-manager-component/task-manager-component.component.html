@@ -56,7 +56,7 @@
       <button (click)="changeTab('notes')" [class.active]="currentTab === 'notes'" class="category">Notes</button>
       <!-- <button (click)="changeTab('link')" [class.active]="currentTab === 'link'" class="category">Links</button> -->
     </div>
-    
+    <div class="content">
     <div *ngIf="currentTab === 'all'">
       <!-- <p>All tasks:</p> -->
       <div class="middle">
@@ -81,6 +81,7 @@
       </div>
     </div>
     </div>
+  </div>
   </div>
   <div class="right-bar">
     <div class="top-part">

@@ -565,6 +565,12 @@ label .label-text {
     text-align: center;
     margin-bottom: 10px; /* Add margin to push it above */
   }
+  /* .content {
+    float: left;  
+    width: 70%;    
+    padding-left: 0; 
+  
+  } */
 
   .task-create-button:hover {
     background-color: #ff0055;
@@ -613,7 +619,7 @@ label .label-text {
   .middle {
     list-style-type: none;
     padding: 0;
-    text-align: center;
+    text-align: left;
     /* border: 1px solid #ccc;
     border-radius: 5px; */
     margin: 10px;
@@ -621,6 +627,8 @@ label .label-text {
   }
   
   .middle li {
+    text-align: left; /* Align content to the left */
+    padding-left: 10px;
     font-weight: bold;
     font-size: 10px;
     font-weight: bolder;
@@ -639,7 +647,7 @@ label .label-text {
   .important {
     list-style-type: none;
     padding: 0;
-    text-align: center;
+    text-align: left;
     /* border: 1px solid #ccc;
     border-radius: 5px; */
     margin: 10px;
