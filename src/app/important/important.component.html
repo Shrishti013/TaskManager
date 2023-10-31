@@ -1,1 +1,19 @@
 <p>important works!</p>
+<div class="product-container">
+    <button (click)="finishAdding()">Finish</button>
+    <div class="product-cards">
+      <div class="content">
+        <div class="task-card-container">
+          <ul>
+            <li *ngFor="let task of tasks$ | async">
+              <h3>{{ task.name }}</h3>
+              <p>{{ task.description }}</p>
+              <p>Deadline: {{ task.deadline | date: 'medium' }}</p>
+              <p>Status: {{ task.status }}</p>
+              <!-- Add additional task details as needed -->
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>

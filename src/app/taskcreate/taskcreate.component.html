@@ -1,4 +1,54 @@
-<body>
+<body> 
+  <div class="form-box">
+<h2>Create a Task</h2>
+<form [formGroup]="taskForm">
+  <div class="form-group">
+    <label for="taskName">Task Name</label>
+    <input type="text" id="taskName" formControlName="taskName" required>
+  </div>
+
+  <div class="form-group">
+    <label for="taskDescription">Task Description</label>
+    <textarea id="taskDescription" formControlName="taskDescription" required></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="taskDeadline">Task Deadline</label>
+    <input type="date" id="taskDeadline" formControlName="taskDeadline" required>
+  </div>
+
+  <div class="form-group">
+    <label for="taskStatus">Task Status</label>
+    <select id="taskStatus" formControlName="taskStatus" required>
+      <option value="In Progress">In Progress</option>
+      <option value="Completed">Completed</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="taskImportant">Important</label>
+    <input type="checkbox" id="taskImportant" formControlName="taskImportant">
+  </div>
+
+  <button type="submit" (click)="createTask()">Create Task</button><br><br>
+  <button type="button" (click)="navigateToMainPage()">Back to Main Page</button>
+
+</form>
+<!-- <h2>Tasks Created:</h2>
+  <ul>
+    <li *ngFor="let task of tasks">
+      <h3>{{ task.name }}</h3>
+      <p>{{ task.description }}</p>
+      <p>Deadline: {{ task.deadline | date: 'medium' }}</p>
+      <p>Status: {{ task.status }}</p>
+    </li>
+  </ul> -->
+</div>
+</body>
+
+
+
+<!-- <body>
 <div class="page-content">
   <div class="form-box">
   <h2>Create a New Task</h2>
@@ -37,4 +87,4 @@
   </form>
 </div>
 </div>
-</body>
+</body> -->

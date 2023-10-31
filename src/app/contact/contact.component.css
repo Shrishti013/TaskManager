@@ -1,0 +1,88 @@
+/* Reset some default styles */
+body, h1, h2, p, label, input, form, a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* Apply styles to the body */
+body {
+    font-weight: bold;
+    margin: 0;
+    display: flex;
+    background-image: url('src\assets\body.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-size: 12px;
+    padding: 0;
+}
+
+/* Container for the contact form */
+.contact-container {
+    background: rgba(230, 33, 76, 0.9);
+    padding: 20px;
+    border-radius: 5px;
+    width: 400px;
+    max-width: 90%;
+    margin: 0 auto;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+}
+
+.contact-container:hover {
+    background-color: rgba(207, 24, 70, 0.9);
+}
+
+/* Input fields and textarea */
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Button styles */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #e6214c;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #cf1846;
+}
+
+/* Additional styles for the contact information */
+.contact-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e6214c;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-container {
+        width: 95%;
+    }
+}

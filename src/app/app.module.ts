@@ -5,21 +5,40 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TaskManagerComponentComponent } from './task-manager-component/task-manager-component.component';
 import { InboxComponent } from './inbox/inbox.component';
-import { TodayComponent } from './today/today.component';
 import { UpcomingComponent } from './upcoming/upcoming.component';
 import { ImportantComponent } from './important/important.component';
 import { MeetingComponent } from './meeting/meeting.component';
-import { TrashComponent } from './trash/trash.component';
-import { FamilyComponent } from './family/family.component';
-import { VacationComponent } from './vacation/vacation.component';
-import { FestivalComponent } from './festival/festival.component';
-import { ConcertsComponent } from './concerts/concerts.component';
-import { FormsModule} from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 import { TaskCreateComponent } from './taskcreate/taskcreate.component';
-import { MatCardModule } from '@angular/material/card';
-import { MatListModule } from '@angular/material/list';
+import { ScheduleModule, RecurrenceEditorModule, DayService, WeekService, WorkWeekService,MonthService, MonthAgendaService } from '@syncfusion/ej2-angular-schedule';
+import {StreamChatModule} from 'stream-chat-angular';
 
+import { AngularEditorModule } from '@kolkov/angular-editor';
+import { TextEditorComponent } from './text-editor/text-editor.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+import { ContactComponent } from './contact/contact.component';
+import { LoginComponent } from './login/login.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+
+import { TaskService } from './task.service';
+
+const routes: Routes = [
+  { path:'home', loadChildren:()=>import ('./task-manager-component/task-manager-component.module').then((data) => data.TaskManagerComponentModule)},
+  { path: '', component: HomeComponent, pathMatch: 'full' }, 
+  { path: 'task', component: TaskManagerComponentComponent },
+  {path:'inbox', component: InboxComponent},
+  {path:'upcoming', component: UpcomingComponent},
+  {path:'taskcreate', component: TaskCreateComponent},
+  {path:'meeting', component: MeetingComponent},
+  {path:'important', component: ImportantComponent},
+  {path:'textEditor', component: TextEditorComponent},
+  {path:'home', component: HomeComponent},
+  {path:'contact', component: ContactComponent},
+  { path: 'login', component: LoginComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+];
 
 @NgModule({
   declarations: [
@@ -27,26 +46,28 @@ import { MatListModule } from '@angular/material/list';
     TaskManagerComponentComponent,
     TaskCreateComponent,
     InboxComponent,
-    TodayComponent,
     UpcomingComponent,
     ImportantComponent,
     MeetingComponent,
-    TrashComponent,
-    FamilyComponent,
-    VacationComponent,
-    FestivalComponent,
-    ConcertsComponent
+    TextEditorComponent,
+    HomeComponent,
+    ContactComponent,
+    LoginComponent,
+    ForgotPasswordComponent,
+
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    MatCardModule,
-    MatListModule,
-    MatDatepickerModule,
+    FormsModule, 
+    ReactiveFormsModule, ScheduleModule, RecurrenceEditorModule,
+    StreamChatModule,
+    AngularEditorModule,
+    HttpClientModule,
   ],
   exports:[RouterModule],
-  providers: [],
+  providers: [DayService, WeekService, WorkWeekService,MonthService, MonthAgendaService, TaskService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

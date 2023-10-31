@@ -1,19 +1,36 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { NoPreloading, RouterModule, Routes } from '@angular/router';
 import { InboxComponent } from './inbox/inbox.component';
 import { TaskManagerComponentComponent } from './task-manager-component/task-manager-component.component';
-import { TodayComponent } from './today/today.component';
 import { TaskCreateComponent } from './taskcreate/taskcreate.component';
+import { UpcomingComponent } from './upcoming/upcoming.component';
+import { MeetingComponent } from './meeting/meeting.component';
+import { ImportantComponent } from './important/important.component';
+import { TextEditorComponent } from './text-editor/text-editor.component';
+import { HomeComponent } from './home/home.component';
+import { ContactComponent } from './contact/contact.component';
+import { LoginComponent } from './login/login.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+
 
 const routes: Routes = [
-  { path: '', component: TaskManagerComponentComponent },
+  { path:'home', loadChildren:()=>import ('./task-manager-component/task-manager-component.module').then((data) => data.TaskManagerComponentModule)},
+  { path: '', component: HomeComponent, pathMatch: 'full' }, 
+  { path: 'task', component: TaskManagerComponentComponent },
   {path:'inbox', component: InboxComponent},
-  {path:'today', component: TodayComponent},
+  {path:'upcoming', component: UpcomingComponent},
   {path:'taskcreate', component: TaskCreateComponent},
+  {path:'meeting', component: MeetingComponent},
+  {path:'important', component: ImportantComponent},
+  {path:'textEditor', component: TextEditorComponent},
+  {path:'home', component: HomeComponent},
+  {path:'contact', component: ContactComponent},
+  { path: 'login', component: LoginComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: NoPreloading })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
