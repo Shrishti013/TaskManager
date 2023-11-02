@@ -23,6 +23,8 @@ import { LoginComponent } from './login/login.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 import { TaskService } from './task.service';
+import { SignupComponent } from './signup/signup.component';
+import { ThankyouComponent } from './thankyou/thankyou.component';
 
 const routes: Routes = [
   { path:'home', loadChildren:()=>import ('./task-manager-component/task-manager-component.module').then((data) => data.TaskManagerComponentModule)},
@@ -54,6 +56,8 @@ const routes: Routes = [
     ContactComponent,
     LoginComponent,
     ForgotPasswordComponent,
+    SignupComponent,
+    ThankyouComponent,
 
   ],
   imports: [

@@ -7,7 +7,6 @@ body, h1, h2, p, label, input, form, a {
   vertical-align: baseline;
 }
 
-/* Apply some general styles */
 body {
   font-weight: bold;
   margin: 0;
@@ -25,7 +24,6 @@ body {
   font-size: 12px;
   background-image: url('src\assets\body.jpg');
   background-repeat: no-repeat;
-  /* background-image: linear-gradient(21deg, rgba(64, 83, 206, 0.3697003234675773) 68%, rgba(255, 206, 196, 0.5) 163%), linear-gradient(163deg, rgba(49, 146, 170, 0.07944489965716128) 86%, rgba(239, 112, 138, 0.5) 40%), linear-gradient(30deg, rgba(76, 79, 173, 0.6173675716587805) 22%, rgba(237, 106, 134, 0.5) 169%), linear-gradient(48deg, rgba(31, 85, 147, 0.7323890641868473) 64%, rgba(247, 126, 132, 0.5) 43%); */
   background-blend-mode: overlay, multiply, color, normal;
   padding: 0;
 }
@@ -39,16 +37,24 @@ body {
 
 .container {
   display: flex;
-  width: 100%;
+  width: 600px;
   max-width: 800px;
+  border-radius: 5px;
   background-color: #e6214c;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.808);
   overflow: hidden;
 }
 .container:hover {
-background-color: #ff0055; /* Change background color on hover */
+  background-color: #ff0055;  
 }
-
+.col-left, .col-right {
+  flex: 1;
+  padding: 50px;
+}
+.col-left {
+  background-color:rgb(250, 250, 250);
+  color:black;
+}
 .login-text {
   text-align: center;
 }
@@ -58,18 +64,13 @@ background-color: #ff0055; /* Change background color on hover */
   margin-bottom: 10px;
 }
 
-.login-form {
-background-color: #e6214c;
-  padding: 20px;
-  border-radius: 5px;
-  width: 400px; /* Increase the width to make the form wider */
-  max-width: 400px; /* Set a maximum width to limit the form size */
-  margin: 0 auto; /* Center the form horizontally */
-  font-size: 1.2em; /* Increase the font size for the form elements */
+.login-form h2 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
 }
 
 .login-form:hover {
-  background-color: #ff0055; /* Change background color on hover */
+  background-color: #ff0055;
 }
 button {
 background-color: #c62649;
@@ -85,34 +86,11 @@ background-color: #ff0055;
 }
 input[type="text"],
 input[type="password"] {
-width: 95%; /* Make the input fields span the entire width of the form */
-padding: 12px; /* Increase the padding for input fields */
-margin-bottom: 15px; /* Increase the margin between input fields */
-}
-
-.login-form h2 {
-  font-size: 1.5em;
-  margin-bottom: 15px;
-}
-
-/* .col-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #e6214c;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-} */
-
-
-input[type="text"], input[type="password"] {
-  width: 95%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid black;
-  border-radius: 3px;
+width: 95%;
+padding: 12px;
+margin-bottom: 15px;
+border: 1px solid black;
+border-radius: 3px;
 }
 
 .btn {

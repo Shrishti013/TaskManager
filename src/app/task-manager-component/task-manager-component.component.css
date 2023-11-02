@@ -37,7 +37,7 @@ body {
   background-image: url('src\assets\body.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.9;
+  /* opacity: 0.7; */
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -45,12 +45,30 @@ body {
   height: 100vh;
   overflow: hidden;
   font-size: 12px;
+  color: whitesmoke;
   background-image: url('src\assets\body.jpg');
   background-repeat: no-repeat;
   /* background-image: linear-gradient(21deg, rgba(64, 83, 206, 0.3697003234675773) 68%, rgba(255, 206, 196, 0.5) 163%), linear-gradient(163deg, rgba(49, 146, 170, 0.07944489965716128) 86%, rgba(239, 112, 138, 0.5) 40%), linear-gradient(30deg, rgba(76, 79, 173, 0.6173675716587805) 22%, rgba(237, 106, 134, 0.5) 169%), linear-gradient(48deg, rgba(31, 85, 147, 0.7323890641868473) 64%, rgba(247, 126, 132, 0.5) 43%); */
   background-blend-mode: overlay, multiply, color, normal;
   padding: 0;
 }
+
+/* Add a pseudo-element to create the background image with opacity */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('src/assets/body.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.3; /* Adjust the opacity as needed */
+  z-index: -1; /* Place it behind the content */
+}
+
+
 
 ul {
   font-weight: bold;
@@ -86,6 +104,11 @@ html, body {
   box-shadow: 0 0.3px 2.2px rgba(0, 0, 0, 0.011), 0 0.7px 5.3px rgba(0, 0, 0, 0.016), 0 1.3px 10px rgba(0, 0, 0, 0.02), 0 2.2px 17.9px rgba(0, 0, 0, 0.024), 0 4.2px 33.4px rgba(0, 0, 0, 0.029), 0 10px 80px rgba(0, 0, 0, 0.04);
   overflow: hidden;
 }
+.tabs:hover {
+  color: black;
+  font-weight: bold;
+  background-color:whitesmoke;
+}
 
 
 /* .task-manager {
@@ -112,6 +135,7 @@ html, body {
 .left-content {
   font-weight: bold;
   padding: 40px;
+  color: whitesmoke;
 }
 
 /* .item {
@@ -137,6 +161,7 @@ html, body {
 }
 
 .item:hover {
+  color: black;
   font-weight: bold;
   background-color: #f0f0f0;
 }
@@ -144,9 +169,14 @@ html, body {
 .item a {
   font-weight: bold;
   text-decoration: none;
-  color: #333;
+  color: whitesmoke;
   /* color: #000; */
   margin-left: 10px;
+}
+.item a:hover {
+  color: black;
+  font-weight: bold;
+  background-color: #f0f0f0;
 }
 
 .category-list {
@@ -361,10 +391,27 @@ html, body {
 
   .header {
     font-weight: bold;
-    font-size: 26px;
+    font-size: 28px;
     color: var(--main-color);
     margin-top: 30px;
   }
+}
+
+/* .page-content {
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 20px 0 20px;
+} */
+
+.tabs {
+  display: flex;
+  /* flex: 1; Use flex-grow to make the tabs cover the remaining space */
+}
+
+/* Additional styling for individual tabs */
+.tabs button {
+  flex: 1; /* Distribute available space evenly among tabs */
 }
 
 .content-categories {
@@ -626,24 +673,23 @@ label .label-text {
     display: block; /* By default, display the list */
   }
   
-  .middle li {
+  .middle p {
     text-align: left; /* Align content to the left */
     padding-left: 10px;
     font-weight: bold;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: bolder;
     margin: 10px 0;
-    /* border: 1px solid #ccc;
-    border-radius: 5px; */
-    /* padding: 10px; */
-    background-color: #fff;
-    /* box-sizing: border-box; */
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
     transition: background-color 0.3s;
   
     &:hover {
-      background-color: #f0f0f0; /* Change background color on hover */
-    }
+      color: black;
+      background-color: #f0f0f0; 
   }
+}
   .important {
     list-style-type: none;
     padding: 0;
@@ -658,20 +704,26 @@ label .label-text {
   .important:empty {
     display: none; /* Hide the list when it's empty */
   }
-  
-  .important li {
-    font-weight: bold;
-    font-size: 18px;
+  .important p:empty {
+  display: none;
+}
+  .important p {
+    text-align: center;
+    padding-right: 10px;
+    font-weight: bolder;
+    font-size: 12px;
     margin: 10px 0;
-    /* border: 1px solid #ccc;
-    border-radius: 5px; */
+    border-radius: 5px;
     padding: 10px;
-    background-color: #fff;
-    /* box-sizing: border-box; */
+    box-sizing: border-box;
     transition: background-color 0.3s;
   
     &:hover {
-      background-color: #f0f0f0; /* Change background color on hover */
+      color: black;
+      background-color: #f0f0f0; 
+    }
+    .important p:empty {
+      display: none;
     }
   }
 
@@ -762,3 +814,6 @@ label .label-text {
       height: 45px;
       transform: rotate(-40deg); }
   
+
+      
+      

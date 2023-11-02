@@ -28,40 +28,15 @@ export class TaskCreateComponent implements OnInit{
       taskImportant: [false]
     });
   }
-
-  // onSubmit() {
-  //   // Handle form submission here
-  //   if (this.taskForm.valid) {
-  //     const taskData = this.taskForm.value;
-  //     this.taskService.addTask(taskData);
-  //     // Clear the form after submission if needed
-  //     this.taskForm.reset();
-  //   } else {
-  //     alert('Please fill in all details.');
-  //   }
-  // }
   createTask() {
     if (this.taskForm.valid) {
       const taskData = this.taskForm.value;
       this.taskService.addTask(taskData);
-      // Clear the form after submission if needed
       this.taskForm.reset();
     } else {
       alert('Please fill in all details.');
     }
   }
-  // createTask() {
-  //   const newTask = {
-  //     taskName: 'Your Task Name',
-  //     taskDescription: 'Your Task Description', 
-  //     taskDeadline: 'Your Task Deadline', 
-  //     taskStatus: 'Your Task Status', 
-  //     taskImportant: false 
-  //   };
-
-  //   this.taskService.addTask(newTask);
-  // }
-
   navigateToMainPage() {
     this.router.navigate(['/task']);
   }
