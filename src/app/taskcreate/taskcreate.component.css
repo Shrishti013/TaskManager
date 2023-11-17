@@ -1,22 +1,59 @@
-body {
-  background-image: url('src\assets\body.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 0.9;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+body, h1, h2, p, label, input, form, a {
   margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  height: 100vh;
+  background: linear-gradient(to bottom, #8620ca, #340243);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  position: relative;
+
+  /* Fog Styles */
+  &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                  radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+      background-position: 0 0, 25px 25px;
+      background-size: 50px 50px;
+      animation: fogAnimation 10s linear infinite;
+      pointer-events: none; /* Allow mouse events to pass through */
+  }
+}
+
+@keyframes fogAnimation {
+  0% {
+      background-position: 0 0, 25px 25px;
+  }
+
+  100% {
+      background-position: 50px 50px, 75px 75px;
+  }
 }
 
 .form-box {
-  width: 450px;
-  background-color: #e6214c;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(53, 41, 41, 0.785);
-  text-align: center;
+  display: flex;
+  width: 500px;
+  max-width: 800px;
+  border-radius: 5px;
+  background-color: #520670;
+  box-shadow: 0 2px 5px rgba(15, 15, 15, 0.808);
+  overflow: hidden;
 }
 .form-group {
   margin-bottom: 20px;
@@ -34,7 +71,7 @@ label {
 }
 
 input[type="text"],
-textarea,
+textarea,[type="number"],
 input[type="date"],
 select {
   width: 95%;
@@ -48,7 +85,7 @@ select {
 }
 
 button {
-  background-color: #c62649;
+  background-color: #010c19;
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -58,100 +95,13 @@ button {
 }
 
 button:hover {
-  background-color: #ff0055;
+  background-color: #340243;
+}
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px; /* Add some margin for spacing */
 }
 .form-box:hover {
-  background-color: #ff0055;
+  background-color: #5b067c; 
 }
-/* img{
-  position: absolute;
-  left: 20px;
-  top: 10px;
-  z-index: 1;
-} */
-
-
-.circle-1 {
-  width: 50px;
-  height: 50px;
-  border: 2px solid #fff;
-  position: absolute;
-  display: block;
-  border-radius: 50%;
-  transform-origin: 50% 50%;
-  left: 5%;
-  top: 50%;
-  animation: fadeInFromTop .5s linear forwards, floating ease 4s infinite; }
-
-.circle-3 {
-  top: 80%;
-  right: 25%;
-  width: 40px;
-  height: 40px;
-  border: 2px solid #fff;
-  position: absolute;
-  display: block;
-  border-radius: 50%;
-  animation: fadeInFromTop .5s linear forwards, floating ease-in-out 4s infinite; }
-
-@keyframes floating {
-  0% {
-    transform: translate(0%, 0%) rotate(25deg); }
-  25% {
-    transform: translate(5%, 15%) rotate(25deg); }
-  50% {
-    transform: translate(10%, 5%) rotate(25deg); }
-  75% {
-    transform: translate(0%, 15%) rotate(25deg); }
-  100% {
-    transform: translate(0%, 0%) rotate(25deg); } }
-
-@keyframes floating-slow {
-  0% {
-    transform: translate(0%, 0%) rotate(25deg); }
-  25% {
-    transform: translate(1%, 3%) rotate(25deg); }
-  50% {
-    transform: translate(2%, 1%) rotate(25deg); }
-  75% {
-    transform: translate(0%, 3%) rotate(25deg); }
-  100% {
-    transform: translate(0%, 0%) rotate(25deg); } }
-
-.triangle {
-  position: absolute; }
-
-.triangle-1 {
-  right: 0;
-  animation: fadeInFromTop .5s linear forwards, floating ease-in-out 6s infinite; }
-  .triangle-1 img {
-    height: 50px;
-    width: 50px;
-    transform: rotate(30deg); }
-
-.triangle-2 {
-  top: 30%;
-  left: 20%;
-  animation: fadeInFromTop .5s linear forwards, floating ease-in-out 8s infinite; }
-  .triangle-2 img {
-    width: 75px;
-    height: 75px;
-    transform: rotate(15deg); }
-
-.triangle-3 {
-  top: 80%;
-  left: 15%;
-  animation: fadeInFromTop .5s linear forwards, floating ease-in-out 10s infinite; }
-  .triangle-3 img {
-    width: 45px;
-    height: 45px;
-    transform: rotate(40deg); }
-
-.triangle-4 {
-  top: 60%;
-  right: 15%;
-  animation: fadeInFromTop .5s linear forwards, floating ease-in-out 5s infinite; }
-  .triangle-4 img {
-    width: 45px;
-    height: 45px;
-    transform: rotate(-40deg); }

@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { v4 as uuidv4 } from 'uuid';
 
 @Injectable({
   providedIn: 'root'
@@ -76,43 +78,23 @@ export class TaskService {
     "taskStatus": "In Progress",
     "taskImportant": false
   }];
+  taskId!: number;
   taskName:string = '';
   taskDescription ='';
   taskDeadline = '';
   taskStatus = '';
   taskImportant = '';
 
-  constructor(){}
+  constructor(private http: HttpClient){}
 
   addTask(newTask: any) {
-    // Add the new task to the events array
+    newTask.taskId =  Math.floor(Math.random() * 100);
     this.tasks.push(newTask);
   }
+
+  
   getTasks(): any[] {
     return this.tasks;
   }
 
 }
-  // private jsonFileUrl = 'assets/tasks.json';
-
-  // constructor(private http: HttpClient) {}
-
-  // createTask(taskData: any): Observable<any> {
-  //   return this.getTasks().pipe(
-  //     catchError((error) => {
-  //       console.error('Error fetching tasks', error);
-  //       return of([]);
-  //     }),
-  //     // Append the new task to the existing tasks
-  //     map((tasks: any[]) => {
-  //       const newTask = { ...taskData };
-  //       tasks.push(newTask);
-  //       return tasks;
-  //     })
-  //   );
-  // }
-
-  // getTasks(): Observable<any[]> {
-  //   return this.http.get<any[]>(this.jsonFileUrl);
-  // }
-  

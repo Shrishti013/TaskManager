@@ -1,43 +1,32 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subject } from 'rxjs';
+import { Observable, Subject, catchError, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private isAuthenticated = false;
-  // private inactivityTimeout = 60000000000; // 10 seconds in milliseconds
-  // private inactivityTimer: any; // Corrected type to 'number'
-  // private resetTimer = new Subject<void>();
+  private _isAuthenticated = false;
 
-  constructor(private router: Router) {
-    // this.inactivityTimer = 0; // Initialize in the constructor
-    // this.resetTimer.subscribe(() => {
-    //   clearTimeout(this.inactivityTimer);
-    //   this.inactivityTimer = setTimeout(() => {
-    //     this.logout();
-    //   }, this.inactivityTimeout);
-    // });
+  constructor(private http: HttpClient, private router: Router) {}
+
+  login(username: string, password: string): Observable<any> {
+    const loginData = { username, password };
+    // 
+    return this.http.post('http://localhost:3000/login', loginData).pipe(
+      catchError((error) => {
+        console.error('Login error:', error);
+        return throwError(() => error);
+      })
+    );
   }
 
-  login(username: string, password: string): boolean {
-    // Implement your authentication logic here.
-    if (username === 'Shrishti027' && password === 'Shrishti@027') {
-      this.isAuthenticated = true;
-      // this.resetTimer.next();
-      return true;
-    }
-    return false;
+  get isAuthenticated(): boolean {
+    return this._isAuthenticated;
   }
 
-  // logout(): void {
-  //   this.isAuthenticated = false;
-  //   clearTimeout(this.inactivityTimer);
-  //   this.router.navigate(['/login']);
-  // }
-
-  isAuthenticatedUser(): boolean {
-    return this.isAuthenticated;
+  set isAuthenticated(value: boolean) {
+    this._isAuthenticated = value;
   }
 }

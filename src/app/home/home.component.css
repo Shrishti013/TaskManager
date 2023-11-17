@@ -1,11 +1,17 @@
-/*
- * Roxy: Bootstrap template by GettTemplates.com
- * https://gettemplates.co/roxy
- */
  html, body {
     width: 100%;
     overflow-x: hidden; }
-  
+    footer {
+      text-align: center;
+      /* padding: 0.2em 0; */
+      background-color: #222;
+      color: #fff;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+    
   body {
     font-family: 'Lato', sans-serif;
     font-weight: 300; }

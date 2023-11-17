@@ -1,88 +1,228 @@
-/* Reset some default styles */
-body, h1, h2, p, label, input, form, a {
+body, h1, p, label, input, form, a {
     margin: 0;
     padding: 0;
     border: 0;
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
-}
+  }
 
-/* Apply styles to the body */
 body {
-    font-weight: bold;
     margin: 0;
-    display: flex;
-    background-image: url('src\assets\body.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
     overflow: hidden;
-    font-size: 12px;
-    padding: 0;
-}
-
-/* Container for the contact form */
-.contact-container {
-    background: rgba(230, 33, 76, 0.9);
-    padding: 20px;
-    border-radius: 5px;
-    width: 400px;
-    max-width: 90%;
-    margin: 0 auto;
-    font-size: 1.2em;
-    transition: background-color 0.3s;
-}
-
-.contact-container:hover {
-    background-color: rgba(207, 24, 70, 0.9);
-}
-
-/* Input fields and textarea */
-input[type="text"],
-input[type="number"],
-textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-}
-
-/* Button styles */
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 10px;
-    background-color: #e6214c;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 3px;
-    transition: background-color 0.3s;
-}
-
-.btn:hover {
-    background-color: #cf1846;
-}
-
-/* Additional styles for the contact information */
-.contact-info {
+    height: 100vh;
+    background: linear-gradient(to bottom, #8620ca, #340243);
     display: flex;
-    justify-content: center;
     align-items: center;
-    background-color: #e6214c;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    position: relative;
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .contact-container {
-        width: 95%;
+    /* Fog Styles */
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                    radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+        background-position: 0 0, 25px 25px;
+        background-size: 50px 50px;
+        animation: fogAnimation 10s linear infinite;
+        pointer-events: none; /* Allow mouse events to pass through */
     }
 }
+
+@keyframes fogAnimation {
+    0% {
+        background-position: 0 0, 25px 25px;
+    }
+
+    100% {
+        background-position: 50px 50px, 75px 75px;
+    }
+}
+
+label {
+    margin-bottom: 50px;
+}
+ 
+ /* body {
+     margin: 0;
+     overflow: hidden;
+     height: 100vh;
+     background: linear-gradient(to bottom, #5fa6ed, #063670);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-family: 'Arial', sans-serif;
+     color: #fff;
+     
+ }
+
+ .fog {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+         radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+     background-position: 0 0, 25px 25px;
+     background-size: 50px 50px;
+     animation: fogAnimation 10s linear infinite;
+ } */
+
+
+ /* @keyframes fogAnimation {
+     0% {
+         background-position: 0 0, 25px 25px;
+     }
+
+     100% {
+         background-position: 50px 50px, 75px 75px;
+     }
+ } */
+
+
+ header {
+     background-color: #0f0b0b;
+     color: #fff;
+     text-align: center;
+     /* padding: 1em 0; */
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     z-index: 2;
+ }
+
+
+
+ footer {
+     text-align: center;
+     /* padding: 1em 0; */
+     background-color: #222;
+     color: #fff;
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+ }
+
+ h1 {
+     font-size: 2em;
+     text-align: center;
+     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+ }
+
+
+ .wrapper {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+ }
+
+ .container {
+     display: flex;
+     /* height: 500px; */
+     width: 500px;
+     max-width: 800px;
+     border-radius: 5px;
+     background-color: #520670;
+     box-shadow: 0 2px 5px rgba(15, 15, 15, 0.808);
+     overflow: hidden;
+
+ }
+
+ .container:hover {
+     background-color: #5b067c;
+ }
+
+ section {
+     margin: 20px;
+ }
+
+ .col-left,
+ .col-right {
+     flex: 1;
+     padding: 50px;
+ }
+
+ .col-left {
+     background-color: rgb(250, 250, 250);
+     color: black;
+     padding: 2px; 
+    padding-top: 50px;
+ }
+
+ .login-text {
+     text-align: center;
+ }
+
+ .login-text h2 {
+     font-size: 1em;
+     margin-bottom: 5px;
+ }
+
+ .login-form h2 {
+     font-size: 1em;
+     margin-bottom: 5px;
+ }
+
+ .login-form:hover {
+     background-color: #5b067c;
+ }
+
+ .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px; /* Add some margin for spacing */
+  }
+
+ button {
+     background-color: #010c19;
+     color: #fff;
+     padding: 10px 20px;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+     transition: background-color 0.3s;
+ }
+
+ button:hover {
+     background-color: #340243;
+ }
+
+ input[type="text"],
+ input[type="password"],
+ input[type="email"],
+ input[type="textarea"] {
+     width: 95%;
+     padding: 12px;
+     margin-bottom: 15px;
+     border: 1px solid black;
+     border-radius: 3px;
+ }
+
+ label {
+     color: black;
+     text-decoration: wavy;
+ }
+
+ /* Responsive adjustments */
+ @media (max-width: 768px) {
+     .container {
+         flex-direction: column;
+         align-items: center;
+     }
+
+     .col-left,
+     .col-right {
+         padding: 20px;
+     }
+ }

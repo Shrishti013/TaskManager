@@ -13,6 +13,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { TaskCreateComponent } from './taskcreate/taskcreate.component';
 import { ScheduleModule, RecurrenceEditorModule, DayService, WeekService, WorkWeekService,MonthService, MonthAgendaService } from '@syncfusion/ej2-angular-schedule';
 import {StreamChatModule} from 'stream-chat-angular';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { TextEditorComponent } from './text-editor/text-editor.component';
@@ -25,6 +26,10 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { TaskService } from './task.service';
 import { SignupComponent } from './signup/signup.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DialogComponent } from './dialog/dialog.component';
+import { ChatComponent } from './chat/chat.component';
+import { OpenaiService } from './openai.service';
 
 const routes: Routes = [
   { path:'home', loadChildren:()=>import ('./task-manager-component/task-manager-component.module').then((data) => data.TaskManagerComponentModule)},
@@ -58,6 +63,8 @@ const routes: Routes = [
     ForgotPasswordComponent,
     SignupComponent,
     ThankyouComponent,
+    DialogComponent,
+    ChatComponent,
 
   ],
   imports: [
@@ -69,9 +76,11 @@ const routes: Routes = [
     StreamChatModule,
     AngularEditorModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
   ],
   exports:[RouterModule],
-  providers: [DayService, WeekService, WorkWeekService,MonthService, MonthAgendaService, TaskService],
+  providers: [DayService, WeekService, WorkWeekService,MonthService, MonthAgendaService, TaskService, OpenaiService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

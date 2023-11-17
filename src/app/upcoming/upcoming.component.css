@@ -30,28 +30,47 @@
   --task-color: #777982;
 }
 
-html {
+/* html {
   background-color: blue;
-}
+} */
 
 body {
-  font-weight: bold;
   margin: 0;
+  overflow: hidden;
+  height: 100vh;
+  background: linear-gradient(to bottom, #8620ca, #340243);
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  font-size: 12px;
-  /* background-color: #0056b3; */
-  background-image: url('src/assets/body.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center center;
-  padding: 150px;
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  position: relative;
+
+  /* Fog Styles */
+  &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                  radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+      background-position: 0 0, 25px 25px;
+      background-size: 50px 50px;
+      animation: fogAnimation 10s linear infinite;
+      pointer-events: none; /* Allow mouse events to pass through */
+  }
+}
+
+@keyframes fogAnimation {
+  0% {
+      background-position: 0 0, 25px 25px;
+  }
+
+  100% {
+      background-position: 50px 50px, 75px 75px;
+  }
 }
 
 
@@ -59,20 +78,32 @@ body {
   font-weight: bold;
   margin: 0;
   display: flex;
+  background-image: url('src\assets\bgm2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   overflow: hidden;
   font-size: 12px;
-  background-image: url('src\assets\body.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center center;
+  color: whitesmoke;
   background-blend-mode: overlay, multiply, color, normal;
   padding: 0;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('src/assets/bgm2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5; 
+  z-index: -1; 
 } */
 
 ul {
@@ -90,52 +121,23 @@ button {
 
 html, body {
   font-weight: bold;
-  /* height: 100%; */
-  margin: 0;
   height: 100%;
-}
-
-/* .task-manager {
-  font-weight: bold;
-  width: 100%;
-  height: 100vh; 
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  max-width: 100%;
-  max-height: 100%;
-  overflow: hidden;
- 
-} */
+}
 
 .task-manager {
   font-weight: bold;
   display: flex;
   justify-content: space-between;
-  width: 800vw;
+  width: 100%;
   max-width: 100%;
   height: 100%;
   max-height: 100%;
   background-size: cover; 
-  /* border-radius: 4px;
-  box-shadow: 0 0.3px 2.2px rgba(0, 0, 0, 0.011), 0 0.7px 5.3px rgba(0, 0, 0, 0.016), 0 1.3px 10px rgba(0, 0, 0, 0.02), 0 2.2px 17.9px rgba(0, 0, 0, 0.024), 0 4.2px 33.4px rgba(0, 0, 0, 0.029), 0 10px 80px rgba(0, 0, 0, 0.04); */
-  overflow: hidden;
-}
-
-
-/* .task-manager {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 1200px;
-  height: 90vh;
-  max-height: 900px;
-  background: #fff;
   border-radius: 4px;
   box-shadow: 0 0.3px 2.2px rgba(0, 0, 0, 0.011), 0 0.7px 5.3px rgba(0, 0, 0, 0.016), 0 1.3px 10px rgba(0, 0, 0, 0.02), 0 2.2px 17.9px rgba(0, 0, 0, 0.024), 0 4.2px 33.4px rgba(0, 0, 0, 0.029), 0 10px 80px rgba(0, 0, 0, 0.04);
   overflow: hidden;
-} */
+}
 
 .left-bar {
   font-weight: bold;
@@ -148,20 +150,8 @@ html, body {
 .left-content {
   font-weight: bold;
   padding: 40px;
+  color: whitesmoke;
 }
-
-/* .item {
-  color: var(--main-color);
-  margin-bottom: 14px;
-  font-weight: 500;
-}
-
-.item svg {
-  width: 14px;
-  height: 14px;
-  color: currentcolor;
-  margin-right: 10px;
-} */
 
 .item {
   font-weight: bold;
@@ -173,6 +163,7 @@ html, body {
 }
 
 .item:hover {
+  color: black;
   font-weight: bold;
   background-color: #f0f0f0;
 }
@@ -180,9 +171,13 @@ html, body {
 .item a {
   font-weight: bold;
   text-decoration: none;
-  color: #333;
-  /* color: #000; */
+  color: whitesmoke;
   margin-left: 10px;
+}
+.item a:hover {
+  color: black;
+  font-weight: bold;
+  background-color: #f0f0f0;
 }
 
 .category-list {
@@ -374,15 +369,13 @@ html, body {
 .page-content {
   font-weight: bold;
   display: flex;
-  /* background-image: url('\src\assets\ss.png'); */
-  /* opacity: 0.1; */
   flex-direction: column;
   flex: 1;
   padding: 40px 20px 0 20px;
 
   .header {
     font-weight: bold;
-    font-size: 26px;
+    font-size: 28px;
     color: var(--main-color);
     margin-top: 30px;
   }
@@ -571,31 +564,18 @@ label .label-text {
   }
 
   .task-create-button {
-    font-weight: bold;
-    background-color: #dd0031;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: bold; /* Make the text bolder */
-    font-weight: bold;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.3s;
-    text-align: center;
-    margin-bottom: 10px; /* Add margin to push it above */
-  }
-  /* .content {
-    float: left;  
-    width: 70%;    
-    padding-left: 0; 
-  
-  } */
+    background-color: #010c19;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+button:hover {
+  background-color: #340243;
+}
 
-  .task-create-button:hover {
-    background-color: #ff0055;
-  }
 
   /* Style for the tab buttons */
   .button-container {
@@ -637,42 +617,53 @@ label .label-text {
     margin-top: 20px;
   }
 
+  .tabs {
+    display: flex;
+    /* flex: 1; Use flex-grow to make the tabs cover the remaining space */
+  }
+  
+  /* Additional styling for individual tabs */
+  .tabs button {
+    flex: 1; /* Distribute available space evenly among tabs */
+  }
+  .tabs:hover {
+    color: black;
+    font-weight: bold;
+    background-color:whitesmoke;
+  }
+
   .middle {
     list-style-type: none;
     padding: 0;
     text-align: left;
-    /* border: 1px solid #ccc;
-    border-radius: 5px; */
     margin: 10px;
     display: block; /* By default, display the list */
   }
   
-  .middle li {
+  .middle p {
     text-align: left; /* Align content to the left */
     padding-left: 10px;
     font-weight: bold;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: bolder;
     margin: 10px 0;
-    /* border: 1px solid #ccc;
-    border-radius: 5px; */
-    /* padding: 10px; */
-    background-color: #fff;
-    /* box-sizing: border-box; */
+    border-radius: 5px;
+    padding: 10px;
+    /* background-color: #fff; */
+    box-sizing: border-box;
     transition: background-color 0.3s;
   
     &:hover {
-      background-color: #f0f0f0; /* Change background color on hover */
+      color: black;
+      background-color: #f0f0f0; 
     }
   }
   .important {
     list-style-type: none;
     padding: 0;
     text-align: left;
-    /* border: 1px solid #ccc;
-    border-radius: 5px; */
     margin: 10px;
-    display: block; /* By default, display the list */
+    display: block; 
   
   }
   
@@ -680,19 +671,50 @@ label .label-text {
     display: none; /* Hide the list when it's empty */
   }
   
-  .important li {
-    font-weight: bold;
-    font-size: 18px;
+  .important p {
+    text-align: center;
+    padding-right: 10px;
+    font-weight: bolder;
+    font-size: 12px;
     margin: 10px 0;
-    /* border: 1px solid #ccc;
-    border-radius: 5px; */
+    border-radius: 5px;
     padding: 10px;
-    background-color: #fff;
-    /* box-sizing: border-box; */
+    box-sizing: border-box;
     transition: background-color 0.3s;
   
     &:hover {
-      background-color: #f0f0f0; /* Change background color on hover */
+      color: black;
+      background-color: #f0f0f0; 
+    }
+    .important p:empty {
+      display: none;
+    }
+  }
+
+  .last {
+    list-style-type: none;
+    padding: 0;
+    text-align: right;
+    margin: 10px;
+    display: block; /* By default, display the list */
+  }
+  
+  .last p {
+    text-align: right; /* Align content to the left */
+    padding-left: 10px;
+    font-weight: bold;
+    font-size: 12px;
+    font-weight: bolder;
+    margin: 10px 0;
+    border-radius: 5px;
+    padding: 10px;
+    /* background-color: #fff; */
+    box-sizing: border-box;
+    transition: background-color 0.3s;
+  
+    &:hover {
+      color: black;
+      background-color: #f0f0f0; 
     }
   }
 

@@ -11,11 +11,20 @@
 <body>
   <div class="confetti-container">
 <div class="thankyou-container">
-    <h2>Thank You, {{ firstName }}!</h2>
-    <p>Your registration was successful.</p>
+  <div *ngFor="let task of tasks">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ task.taskName }}</h5>
+        <p class="card-text">{{ task.taskDescription }}</p>
+        <p class="card-text">Deadline: {{ task.taskDeadline }}</p>
+        <p class="card-text">Status: {{ task.taskStatus }}</p>
+        <p class="card-text">Important: {{ task.taskImportant ? 'Yes' : 'No' }}</p>
+      </div>
+    </div>
+  </div>
     <button routerLink="/task">Let's get started</button>
   </div>
-  <div class="circle-1"></div>
+  <!-- <div class="circle-1"></div>
 <div class="circle-1"></div>
 <div class="circle-3"></div>
 <div class="triangle triangle-1">
@@ -29,7 +38,7 @@
 </div>
 <div class="triangle triangle-4">
   <img src="\assets\obj_triangle.png" alt="">
-</div>
+</div> -->
 </div>
 </body>
 </html>

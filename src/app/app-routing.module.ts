@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { SignupComponent } from './signup/signup.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
+import { ChatComponent } from './chat/chat.component';
 
 
 const routes: Routes = [
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'thankyou', component: ThankyouComponent},
+  { path: 'chat', component: ChatComponent},
   { path: 'forgot-password', component: ForgotPasswordComponent },
 ];
 

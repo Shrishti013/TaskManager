@@ -8,34 +8,29 @@
     <title>Sign In Form</title>
 </head>
 <body>
-    <div class="container">
-        <h2>Sign Up</h2>
-        <form (ngSubmit)="onSubmit()" [formGroup]="signupForm">
-          <div class="form-group">
-            <label for="firstName">First Name:</label>
-            <input type="text" id="firstName" name="firstName" formControlName="firstName">
-          </div>
-          <div class="form-group">
-            <label for="lastName">Last Name:</label>
-            <input type="text" id="lastName" name="lastName" formControlName="lastName">
-          </div>
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" formControlName="email">
-          </div>
-          <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" formControlName="password">
-          </div>
-          <div class="form-group">
-            <label for="confirmPassword">Confirm Password:</label>
-            <input type="password" id="confirmPassword" name="confirmPassword" formControlName="confirmPassword">
-          </div>
-          <button type="submit" [disabled]="signupForm.invalid" class="login">Sign Up</button><br><br>
-        </form>
+  <header>
+    <h1>Sign Up</h1>
+  </header>
+  <div class="container">
+    <form class="sign-up-form" #signupForm="ngForm">
+      <h1>Sign Up</h1>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input [(ngModel)]="username" type="text" id="username" name="username" required />
       </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input [(ngModel)]="email" type="email" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input [(ngModel)]="password" type="password" id="password" name="password" required />
+      </div>
+      <button (click)="registerUser()" type="submit">Sign Up</button>
+    </form>
+  </div>
       
-  <div class="circle-1"></div>
+  <!-- <div class="circle-1"></div>
 <div class="circle-1"></div>
 <div class="circle-3"></div>
 <div class="triangle triangle-1">
@@ -49,8 +44,10 @@
 </div>
 <div class="triangle triangle-4">
   <img src="\assets\obj_triangle.png" alt="">
-</div>
-    
+</div> -->
+<footer>
+  <p>© 2023 TASH. Design by Shrishti</p>
+</footer>
 </body>
 </html>
   

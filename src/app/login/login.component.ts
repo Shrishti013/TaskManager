@@ -17,18 +17,20 @@ export class LoginComponent {
 
   login(): void {
     const { username, password } = this.user;
-    if (this.authService.login(username, password)) {
-      alert('Login successful');
-      this.router.navigate(['/task']);
-      this.user.username = '';
-      this.user.password = '';
-    } else {
-      alert('Invalid credentials');
-    }
+    this.authService.login(username, password).subscribe({
+      next: (response) => {
+        // Check the response from the server
+        if (response.success) {
+          alert('Login successful');
+          this.authService.isAuthenticated = true;
+          this.router.navigate(['/task']);
+        } else {
+          alert('Invalid credentials');
+        }
+      },
+      error: (error) => {
+        console.error('Login error:', error);
+      },
+    });
   }
-
-  forgotPassword(): void {
-    this.router.navigate(['/forgot-password']);
-  }
-
 }
